@@ -1,0 +1,18 @@
+{
+    "name": "rb/contract",
+    "description": "Robot Battle Contracts",
+    "type": "library",
+    "require": {
+        "php": "^8.4"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^v3.88",
+        "phpstan/phpstan": "^2.1",
+        "phpstan/phpstan-strict-rules": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "RB\\Contract\\": "src/"
+        }
+    }
+}
