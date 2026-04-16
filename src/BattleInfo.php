@@ -28,5 +28,11 @@ final readonly class BattleInfo
         public int $startRobotDefence,
         /** The robot's initial view range (ray-cast radius). May increase via Scope item. */
         public int $startRobotViewRange,
+        /**
+         * Maximum memory a robot may use for its internal state, in bytes (0 = unlimited).
+         * Measured as the serialized size of the robot object after each step() call.
+         * Exceeding this limit causes the robot to forfeit that turn (same as a timeout).
+         */
+        public int $memoryLimitBytes = 0,
     ) {}
 }
