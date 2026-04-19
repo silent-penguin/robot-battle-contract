@@ -20,7 +20,8 @@ final readonly class Item
             ItemType::Shield,
             ItemType::Medkit,
             ItemType::Scope,
-            ItemType::Gun => 0,
+            ItemType::Gun,
+            ItemType::SniperRifle => 0,
         };
     }
 
@@ -30,7 +31,8 @@ final readonly class Item
             ItemType::Shield => 3,
             ItemType::Medkit,
             ItemType::Scope,
-            ItemType::Gun => 0,
+            ItemType::Gun,
+            ItemType::SniperRifle => 0,
         };
     }
 
@@ -40,7 +42,8 @@ final readonly class Item
             ItemType::Medkit => 20,
             ItemType::Shield,
             ItemType::Scope,
-            ItemType::Gun => 0,
+            ItemType::Gun,
+            ItemType::SniperRifle => 0,
         };
     }
 }
