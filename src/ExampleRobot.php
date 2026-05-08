@@ -32,15 +32,17 @@ use RB\Contract\Robot\RobotInterface;
  * Доступные действия:
  *  - MoveAction(Direction)      — шаг в направлении (Up/Down/Left/Right)
  *  - AttackAction(Direction)    — удар по соседней клетке (урон = attack - defense)
- *  - ShootAction(Direction)     — выстрел (требует Gun в инвентаре), иначе удар на 1 клетку
+ *  - ShootAction(Direction)     — выстрел (требует оружие (Gun или SniperRifle) в инвентаре), иначе удар на 1 клетку
  *                                 Дальность = gun->range (3–7). Урон = attack - defense - 2
  *  - PickupAction()             — подобрать и сразу применить предмет
  *  - PickupAction(store: true)  — положить в инвентарь (все предметы идут в инвентарь)
  *  - UseItemAction(ItemType)    — использовать предмет из инвентаря
  *                                 Пример: new UseItemAction(ItemType::Medkit)
  *                                 Доступный инвентарь: $context->self->inventory (Item[])
- *                                 Gun кладётся в инвентарь ($item->range — дальность стрельбы)
+ *                                 Gun/SniperRifle кладётся в инвентарь ($item->range — дальность стрельбы)
  *                                 Scope даёт полную карту (все тайлы + все враги) на 1 ход
+ *  - DropItemAction(ItemType)   — выбросить предмет из инвентаря на текущую клетку
+ *                                 Игнорируется, если предмета нет или клетка уже занята предметом
  *  - WaitAction()               — пропустить действие
  */
 final class ExampleRobot implements RobotInterface

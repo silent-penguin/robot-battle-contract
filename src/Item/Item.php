@@ -46,4 +46,26 @@ final readonly class Item
             ItemType::SniperRifle => 0,
         };
     }
+
+    public function getViewRangeBonus(): int
+    {
+        return match ($this->type) {
+            ItemType::Scope => 5,
+            ItemType::Medkit,
+            ItemType::Shield,
+            ItemType::Gun,
+            ItemType::SniperRifle => 0,
+        };
+    }
+
+    public function getShootRangeBonus(): int
+    {
+        return match ($this->type) {
+            ItemType::Scope => 3,
+            ItemType::Medkit,
+            ItemType::Shield,
+            ItemType::Gun,
+            ItemType::SniperRifle => 0,
+        };
+    }
 }
